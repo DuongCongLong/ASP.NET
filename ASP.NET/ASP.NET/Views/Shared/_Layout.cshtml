@@ -3,7 +3,24 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title  My ASP.NET Application</title>
+    <link href="~/Content/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+    <!-- jQuery -->
+    <script src="~/Scripts/js/jquery-2.0.0.min.js" type="text/javascript"></script>
+
+    <!-- Bootstrap4 files-->
+    <script src="~/Scripts/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font awesome 5 -->
+    <link href="~/fonts/fontawesome/css/all.min.css" type="text/css" rel="stylesheet">
+    <!-- custom style -->
+    <link href="~/Content/css/ui.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/css/responsive.css" rel="stylesheet" type="text/css" />
+
+    <!-- custom javascript -->
+    <script src="~/Scripts/js/script.js" type="text/javascript"></script>
 </head>
 <body>
     <header class="section-header">
@@ -42,7 +59,18 @@
                                         <i class="fa fa-user"></i>
                                         <span class="notify">3</span>
                                     </div>
-                                    <small class="text"> My profile </small>
+                                    @if (Session["idUser"] != null)
+                                    {
+                                        <li><a href="~/Admin/Product/Index">Trang quản trị</a></li>
+                                        <li>
+                                            <a href="~/Home/Logout" class="btn btn-warning">Logout</a>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li><a href="~/Home/Register">Đăng ký</a></li>
+                                        <li><a href="~/Home/Login">Đăng nhập</a></li>
+                                    }
                                 </a>
                             </div>
                             <div class="widget-header mr-3">
@@ -146,7 +174,6 @@
     </header> <!-- section-header.// -->
     <div class="container body-content">
         @RenderBody()
-
     </div>
     <footer class="section-footer bg-secondary">
         <div class="container">
@@ -184,8 +211,8 @@
                     <aside class="col-md col-6">
                         <h6 class="title">Account</h6>
                         <ul class="list-unstyled">
-                            <li> <a href="@Url.Action("Login", "User")"> User Login </a></li>
-                            <li> <a href="@Url.Action("Register", "User")"> User register </a></li>
+                            <li> <a href="@Url.Action("Login", "Home")"> User Login </a></li>
+                            <li> <a href="@Url.Action("Register", "Home")"> User register </a></li>
                             <li> <a href="#"> Account Setting </a></li>
                             <li> <a href="#"> My Orders </a></li>
                         </ul>

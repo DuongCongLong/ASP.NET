@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ASP.NET.Context;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,11 @@ namespace ASP.NET.Controllers
     public class ProductController : Controller
     {
         // GET: Product
-        public ActionResult ProductDetail()
+        WebsiteASP_NETEntities objWebsiteASP_NETEntities = new WebsiteASP_NETEntities();
+        public ActionResult ProductDetail(int Id)
         {
-            return View();
+            var objProduct = objWebsiteASP_NETEntities.Products.Where(n => n.Id == Id).FirstOrDefault();
+            return View(objProduct);
         }
     }
 }

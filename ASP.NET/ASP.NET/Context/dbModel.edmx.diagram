@@ -4,12 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="cc989f191b27473b8fa634c85884a47e" Name="Diagram1">
-        <EntityTypeShape EntityType="ASPNETModel.Brand" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ASPNETModel.Category" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ASPNETModel.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="ASPNETModel.FK_Products_Brands" ManuallyRouted="false" />
-        <AssociationConnector Association="ASPNETModel.FK_Products_Categories" ManuallyRouted="false" />
+      <Diagram DiagramId="0ee4873a12ab473c87035568e4634ba0" Name="Diagram1">
+        <EntityTypeShape EntityType="WebsiteASP_NETModel.Brand" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebsiteASP_NETModel.Category" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebsiteASP_NETModel.Order" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebsiteASP_NETModel.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebsiteASP_NETModel.User" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="WebsiteASP_NETModel.FK__Product__BrandId__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="WebsiteASP_NETModel.FK__Product__Categor__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="WebsiteASP_NETModel.FK__Order__ProductId__3F466844" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ASP.NET.Context;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,13 +10,16 @@ namespace ASP.NET.Controllers
     public class CategoryController : Controller
     {
         // GET: Category
-        public ActionResult AllCategory()
+        WebsiteASP_NETEntities objWebsiteASP_NETEntities = new WebsiteASP_NETEntities();
+        public ActionResult Index()
         {
-            return View();
+            var lstCategory = objWebsiteASP_NETEntities.Categories.ToList();
+            return View(lstCategory);
         }
-        public ActionResult ProductByCategory()
+        public ActionResult ProductCategory(int Id)
         {
-            return View();
+            var listProduct = objWebsiteASP_NETEntities.Products.Where(n=>n.CategoryId==Id).ToList();
+            return View(listProduct);
         }
     }
 }

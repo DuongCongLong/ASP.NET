@@ -1,0 +1,26 @@
+﻿@model List<ASP.NET.Context.Category>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-content padding-y">
+    <div class="container">
+        <nav class="row">
+            @foreach (var category in Model)
+            {
+            <div class="col-md-3">
+                <div class="card card-category">
+                    <div class="img-wrap" style="background: #ffd7d7">
+                        <img src="~/Content/images/category/@category.Avatar">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title"><a href="#">@category.Name</a></h4>
+                    </div>
+                </div>
+            </div> <!-- col.// -->
+            }
+        </nav> <!-- row.// -->
+    </div> <!-- container .//  -->
+</section>
+

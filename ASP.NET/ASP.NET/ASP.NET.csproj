@@ -151,7 +151,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Context\Order.cs">
+      <DependentUpon>dbModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Context\Product.cs">
+      <DependentUpon>dbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\User.cs">
       <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\CategoryController.cs" />
@@ -2414,18 +2420,20 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Product\ProductDetail.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\User\Register.cshtml" />
-    <Content Include="Views\Category\AllCategory.cshtml" />
-    <Content Include="Views\Category\ProductByCategory.cshtml" />
-    <Content Include="Views\Shopping\Cart.cshtml" />
     <Content Include="Views\Profile\Address.cshtml" />
     <Content Include="Views\Profile\Main.cshtml" />
     <Content Include="Views\Profile\Orders.cshtml" />
     <Content Include="Views\Profile\Seller.cshtml" />
     <Content Include="Views\Profile\Setting.cshtml" />
     <Content Include="Views\Profile\Wishlist.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Product\ProductDetail.cshtml" />
+    <Content Include="Views\Category\ProductCategory.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Shopping\Cart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
