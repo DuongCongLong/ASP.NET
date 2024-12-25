@@ -11,7 +11,6 @@ using System.Web.Mvc;
 
 namespace ASP.NET.Controllers
 {
-
     public class HomeController : Controller
     {
         WebsiteASP_NETEntities objWebsiteASP_NETEntities = new WebsiteASP_NETEntities();
