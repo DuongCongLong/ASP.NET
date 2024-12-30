@@ -66,6 +66,7 @@ namespace ASP.NET.Controllers
             Session["count"] = Convert.ToInt32(Session["count"]) - 1;
             return Json(new { Message = "Thành công", JsonRequestBehavior.AllowGet });
         }
+
     }
 
 

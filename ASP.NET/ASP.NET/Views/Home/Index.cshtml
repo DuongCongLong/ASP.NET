@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container">
-        <!-- ========================= SECTION MAIN  ========================= -->
+        <!-- ========================= SECTION MAIN  =========================-->
         <section class="section-main padding-y">
             <main class="card">
                 <div class="card-body">
@@ -24,8 +24,9 @@
                                     @foreach (var category in Model.ListCategory)
                                     {
                                         <li>
-                                            @Html.ActionLink(category.Name, "ProductCategory", "Category", new {@Id=category.Id},null)
-                                        </li>   
+                                            @Html.ActionLink(category.Name, "ProductCategory", "Category", new { @Id = category.Id }, null)
+                                        </li>
+
                                     }
                                 </ul>
                             </nav>
@@ -41,13 +42,13 @@
                                 </ol>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="~/Content/images/banners/slide1.jpg" alt="First slide">
+                                        <img src="~/Content/images/banners/slider.jpg" alt="First slide">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="~/Content/images/banners/slide2.jpg" alt="Second slide">
+                                        <img src="~/Content/images/banners/slider1.jpg" alt="Second slide">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="~/Content/images/banners/slide3.jpg" alt="Third slide">
+                                        <img src="~/Content/images/banners/slider3.jpg" alt="Third slide">
                                     </div>
                                 </div>
                                 <a class="carousel-control-prev" href="#carousel1_indicator" role="button" data-slide="prev">
@@ -65,12 +66,12 @@
                         <div class="col-md d-none d-lg-block flex-grow-1">
                             <aside class="special-home-right">
                                 <h6 class="bg-blue text-center text-white mb-0 p-2">Danh mục phổ biến</h6>
-                                @foreach (var category in Model.ListCategory.Where(n=>n.ShowOnHomePage == true).Take(3))
+                                @foreach (var category in Model.ListCategory.Where(n => n.ShowOnHomePage == true).Take(3))
                                 {
                                     <div class="card-banner border-bottom">
                                         <div class="py-3" style="width:80%">
                                             <h6 class="card-title">@category.Name</h6>
-                                            <a href="#" class="btn btn-secondary btn-sm"> Source now </a>
+                                            <a href="#" class="btn btn-secondary btn-sm"> Mua ngay </a>
                                         </div>
                                         <img src="~/Content/images/category/@category.Avatar" height="80" class="img-bg">
                                     </div>
@@ -90,22 +91,22 @@
                 <div class="col-heading content-body">
                     <header class="section-heading">
                         <h3 class="section-title">Giảm giá sốc</h3>
-                        <p>Hygiene equipments</p>
+                        <p>Hệ sinh thái của nhà táo</p>
                     </header><!-- sect-heading -->
                     <div class="timer">
-                        <div> <span class="num">04</span> <small>Days</small></div>
-                        <div> <span class="num">12</span> <small>Hours</small></div>
-                        <div> <span class="num">58</span> <small>Min</small></div>
-                        <div> <span class="num">02</span> <small>Sec</small></div>
+                        <div> <span class="num">04</span> <small>Ngày</small></div>
+                        <div> <span class="num">12</span> <small>Giờ</small></div>
+                        <div> <span class="num">58</span> <small>Phút</small></div>
+                        <div> <span class="num">02</span> <small>Giây</small></div>
                     </div>
                 </div> <!-- col.// -->
                 <div class="row no-gutters items-wrap">
-                    @foreach (var product in Model.ListProduct.Where(n=>n.TypeId == 1).Take(3))
+                    @foreach (var product in Model.ListProduct.Where(n => n.TypeId == 1).Take(4))
                     {
                         <div class="col-md col-6">
                             <figure class="card-product-grid card-sm">
                                 <a href="@Url.Action("ProductDetail", "Product",new {Id=product.Id})" class="img-wrap">
-                                   <img src="~/Content/images/product/@product.Avatar">
+                                    <img src="~/Content/images/product/@product.Avatar">
                                 </a>
                                 <div class="text-wrap p-3">
                                     <a href="@Url.Action("ProductDetail", "Product",new {Id=product.Id})" class="title">@product.Name</a>
@@ -114,7 +115,7 @@
                             </figure>
                         </div> <!-- col.// -->
                     }
-                    </div>
+                </div>
             </div>
 
         </section>
@@ -130,27 +131,27 @@
                     <div class="col-md-3">
 
                         <div class="home-category-banner bg-light-orange">
-                            <h5 class="title">Best trending clothes only for summer</h5>
-                            <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                            <a href="#" class="btn btn-outline-primary rounded-pill">Source now</a>
-                            <img src="~/Content/images/items/2.jpg" class="img-bg">
+                            <h5 class="title">Những công nghệ xu hướng chỉ dành cho mùa hè</h5>
+                            <p>Các công nghệ mới nhất và sáng tạo nhất đang được ứng dụng trong mùa hè này.</p>
+                            <a href="#" class="btn btn-outline-primary rounded-pill">Mua ngay</a>
+                            <img src="~/Content/images/items/airpod1.jpg" class="img-bg">
                         </div>
 
                     </div> <!-- col.// -->
                     <div class="col-md-9">
                         <ul class="row no-gutters bordered-cols">
-                            @foreach (var product in Model.ListProduct.Where(n=>n.BrandId==1))
+                            @foreach (var product in Model.ListProduct.Where(n => n.BrandId == 1))
                             {
                                 <li class="col-6 col-lg-3 col-md-4">
                                     <a href="#" class="item">
                                         <div class="card-body">
-                                            <h6 class="title">Well made women clothes with trending collection  </h6>
+                                            <h6 class="title">Công nghệ tiên tiến với bộ sưu tập xu hướng</h6>
                                             <img class="img-sm float-right" src="~/Content/images/product/@product.Avatar">
                                             <p class="text-muted"><i class="fa fa-map-marker-alt"></i> @product.Name</p>
                                         </div>
                                     </a>
                                 </li>
-                             }
+                            }
                         </ul>
                     </div> <!-- col.// -->
                 </div> <!-- row.// -->
@@ -168,10 +169,10 @@
                     <div class="col-md-3">
 
                         <div class="home-category-banner bg-light-orange">
-                            <h5 class="title">Machinery items for manufacturers</h5>
-                            <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                            <a href="#" class="btn btn-outline-primary rounded-pill">Source now</a>
-                            <img src="~/Content/images/items/14.jpg" class="img-bg">
+                            <h5 class="title">Công nghệ tiên tiến cho nhà sản xuất</h5>
+                            <p>Công nghệ như tự động hóa và AI giúp nâng cao năng suất và giảm chi phí sản xuất.</p>
+                            <a href="#" class="btn btn-outline-primary rounded-pill">Mua ngay</a>
+                            <img src="~/Content/images/items/airpod3.jpg" class="img-bg">
                         </div>
 
                     </div> <!-- col.// -->
@@ -182,7 +183,7 @@
                                 <li class="col-6 col-lg-3 col-md-4">
                                     <a href="#" class="item">
                                         <div class="card-body">
-                                            <h6 class="title">Well made women clothes with trending collection  </h6>
+                                            <h6 class="title">Công nghệ tiên tiến với bộ sưu tập xu hướng  </h6>
                                             <img class="img-sm float-right" src="~/Content/images/product/@product.Avatar">
                                             <p class="text-muted"><i class="fa fa-map-marker-alt"></i> @product.Name</p>
                                         </div>
@@ -200,55 +201,55 @@
         <section class="padding-bottom">
 
             <header class="section-heading heading-line">
-                <h4 class="title-section text-uppercase">Request for Quotation</h4>
+                <h4 class="title-section text-uppercase">Yêu cầu báo giá</h4>
             </header>
 
             <div class="row">
                 <div class="col-md-8">
                     <div class="card-banner banner-quote overlay-gradient" style="background-image: url('~/Content/images/banners/banner9.jpg');">
                         <div class="card-img-overlay white">
-                            <h3 class="card-title">An easy way to send request to suppliers</h3>
+                            <h3 class="card-title">Cách đơn giản để gửi yêu cầu đến nhà cung cấp</h3>
                             <p class="card-text" style="max-width: 400px">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                                 tempor incididunt.
                             </p>
-                            <a href="" class="btn btn-primary rounded-pill">Learn more</a>
+                            <a href="" class="btn btn-primary rounded-pill">Tìm hiểu thêm</a>
                         </div>
                     </div>
                 </div> <!-- col // -->
                 <div class="col-md-4">
 
                     <div class="card card-body">
-                        <h4 class="title py-3">One Request, Multiple Quotes</h4>
+                        <h4 class="title py-3">Một yêu cầu, nhiều báo giá</h4>
                         <form>
                             <div class="form-group">
-                                <input class="form-control" name="" placeholder="What are you looking for?" type="text">
+                                <input class="form-control" name="" placeholder="Bạn đang tìm kiếm gì?" type="text">
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input class="form-control" placeholder="Quantity" name="" type="text">
+                                    <input class="form-control" placeholder="Số lượng" name="" type="text">
 
                                     <select class="custom-select form-control">
-                                        <option>Pieces</option>
-                                        <option>Litres</option>
-                                        <option>Tons</option>
-                                        <option>Gramms</option>
+                                        <option>Chiếc</option>
+                                        <option>Lít</option>
+                                        <option>Tấn</option>
+                                        <option>Grams</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group text-muted">
-                                <p>Select template type:</p>
+                                <p>Chọn loại mẫu yêu cầu:</p>
                                 <label class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" value="option1">
-                                    <div class="form-check-label">Request price</div>
+                                    <div class="form-check-label">Yêu cầu báo giá</div>
                                 </label>
                                 <label class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" value="option2">
-                                    <div class="form-check-label">Request a sample</div>
+                                    <div class="form-check-label">Yêu cầu mẫu</div>
                                 </label>
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-warning">Request for quote</button>
+                                <button class="btn btn-warning">Yêu cầu báo giá</button>
                             </div>
                         </form>
                     </div>
@@ -256,6 +257,7 @@
                 </div> <!-- col // -->
             </div> <!-- row // -->
         </section>
+
 
         <!-- =============== SECTION REQUEST .//END =============== -->
         <!-- =============== SECTION ITEMS =============== -->
@@ -266,7 +268,7 @@
             </header>
 
             <div class="row row-sm">
-                @foreach (var product in Model.ListProduct.Where(n=>n.TypeId==2).Take(6))
+                @foreach (var product in Model.ListProduct.Where(n => n.TypeId == 2).Take(6))
                 {
                     <div class="col-xl-2 col-lg-3 col-md-4 col-6">
                         <div class="card card-sm card-product-grid">
@@ -276,7 +278,7 @@
                             <figcaption class="info-wrap">
                                 <a href="@Url.Action("ProductDetail", "Product", new { id = product.Id })" class="title">@product.Name</a>
                                 <div class="price mt-1">
-                                    @product.Price
+                                    @((product.Price ?? 0).ToString("N0")) VNĐ
                                 </div> <!-- price-wrap.// -->
                             </figcaption>
                         </div>

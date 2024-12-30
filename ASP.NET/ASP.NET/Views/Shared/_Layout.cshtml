@@ -53,25 +53,33 @@
                     </div> <!-- col.// -->
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="widgets-wrap float-md-right">
-                            <div class="widget-header mr-3">
-                                <a href="@Url.Action("Main", "Profile")" class="widget-view">
-                                    <div class="icon-area">
-                                        <i class="fa fa-user"></i>
-                                        <span class="notify">3</span>
+                            <div style="display: flex; align-items: center; gap: 1rem; font-family: Arial, sans-serif; margin-left:15px">
+                                <a href="@Url.Action("Main", "Profile")" style="text-decoration: none; color: inherit; position: relative;">
+                                    <div style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: #f0f0f0; position: relative;">
+                                        <i class="fa fa-user" style="font-size: 20px; color: #000000;"></i> <!-- Đổi màu icon thành đen -->
+                                        <span style="position: absolute; top: -5px; right: -5px; background-color: red; color: white; font-size: 12px; padding: 2px 5px; border-radius: 50%;">3</span>
                                     </div>
+                                </a>
+                                <ul style="list-style-type: none; margin: 0; padding: 0; display: flex; gap: 1rem; align-items: center;">
                                     @if (Session["idUser"] != null)
                                     {
-                                        <li><a href="~/Admin/Product/Index">Trang quản trị</a></li>
                                         <li>
-                                            <a href="~/Home/Logout" class="btn btn-warning">Logout</a>
+                                            <a href="~/Admin/Product/Index" style="text-decoration: none; color: #000000; font-size: 14px;">Long Duong</a> <!-- Đổi màu chữ thành đen -->
+                                        </li>
+                                        <li>
+                                            <a href="~/Home/Logout" style="text-decoration: none; color: white; background-color: #f0ad4e; padding: 5px 10px; border-radius: 5px; font-size: 14px;">Logout</a>
                                         </li>
                                     }
                                     else
                                     {
-                                        <li><a href="~/Home/Register">Đăng ký</a></li>
-                                        <li><a href="~/Home/Login">Đăng nhập</a></li>
+                                        <li>
+                                            <a href="~/Home/Register" style="text-decoration: none; color: #000000; font-size: 14px;">Đăng ký</a> <!-- Đổi màu chữ thành đen -->
+                                        </li>
+                                        <li>
+                                            <a href="~/Home/Login" style="text-decoration: none; color: #000000; font-size: 14px;">Đăng nhập</a> <!-- Đổi màu chữ thành đen -->
+                                        </li>
                                     }
-                                </a>
+                                </ul>
                             </div>
                             <div class="widget-header mr-3">
                                 <a href="#" class="widget-view">
@@ -94,7 +102,7 @@
                                 <a href="@Url.Action("Index", "Cart")" class="widget-view">
                                     <div class="icon-area">
                                         <i class="fa fa-shopping-cart"></i>
-                                        
+
                                         <span class="notify" id="CartCount">@Session["count"]</span>
                                     </div>
                                     <small class="text"> Cart </small>

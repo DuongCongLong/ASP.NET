@@ -179,6 +179,7 @@
     <Compile Include="Models\CartModel.cs" />
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\ParticalMetadataType.cs" />
+    <Compile Include="Models\ProductListViewModel.cs" />
     <Compile Include="Models\ProductMasterData.cs" />
     <Compile Include="Models\UserMasterData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

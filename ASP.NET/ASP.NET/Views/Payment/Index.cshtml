@@ -1,4 +1,28 @@
-﻿
-
-<h2>Thanh toán thành công</h2>
-
+﻿@{
+    ViewBag.Title = "Thanh toán thành công";
+}
+<section class="section-content padding-y">
+    <div class="container">
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-danger mt-5">
+                <h4>Thanh toán thất bại</h4>
+                <p>@TempData["Error"]</p>
+                <a href="@Url.Action("Index", "Cart")" class="btn btn-danger">Quay lại giỏ hàng</a>
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-success mt-5">
+                <h4>Thanh toán thành công!</h4>
+                <p>Cảm ơn bạn đã mua hàng. Đơn hàng của bạn sẽ được xử lý sớm nhất.</p>
+                <p><strong>Mã đơn hàng:</strong> @ViewBag.OrderCode</p>
+                <p><strong>Ngày đặt hàng:</strong> @DateTime.Now.ToString("dd/MM/yyyy HH:mm")</p>
+                <div class="mt-3">
+                    <a href="@Url.Action("Index", "Home")" class="btn btn-primary">Tiếp tục mua sắm</a>
+                    <a href="@Url.Action("OrderHistory", "User")" class="btn btn-secondary">Xem lịch sử đơn hàng</a>
+                </div>
+            </div>
+        }
+    </div>
+</section>
