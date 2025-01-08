@@ -43,5 +43,6 @@ namespace ASP.NET.Context
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
         public HttpPostedFileBase ImageUpload { get; set; }
+
     }
 }

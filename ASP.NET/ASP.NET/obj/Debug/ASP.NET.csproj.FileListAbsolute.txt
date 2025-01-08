@@ -164,3 +164,7 @@ E:\CHUYÊN ĐỀ ASP.NET\ASP.NET\ASP.NET\bin\EntityFramework.dll
 E:\CHUYÊN ĐỀ ASP.NET\ASP.NET\ASP.NET\bin\EntityFramework.SqlServer.dll
 E:\CHUYÊN ĐỀ ASP.NET\ASP.NET\ASP.NET\bin\EntityFramework.xml
 E:\CHUYÊN ĐỀ ASP.NET\ASP.NET\ASP.NET\bin\EntityFramework.SqlServer.xml
+E:\CHUYÊN ĐỀ ASP.NET\ASP.NET\ASP.NET\bin\PagedList.dll
+E:\CHUYÊN ĐỀ ASP.NET\ASP.NET\ASP.NET\bin\PagedList.Mvc.dll
+E:\CHUYÊN ĐỀ ASP.NET\ASP.NET\ASP.NET\bin\PagedList.xml
+E:\CHUYÊN ĐỀ ASP.NET\ASP.NET\ASP.NET\bin\PagedList.Mvc.xml

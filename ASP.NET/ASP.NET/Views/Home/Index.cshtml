@@ -71,7 +71,7 @@
                                     <div class="card-banner border-bottom">
                                         <div class="py-3" style="width:80%">
                                             <h6 class="card-title">@category.Name</h6>
-                                            <a href="#" class="btn btn-secondary btn-sm"> Mua ngay </a>
+                                            <a href="@Url.Action("ProductDetail", "Product",new {Id=category.Id})" class="btn btn-secondary btn-sm"> Mua ngay </a>
                                         </div>
                                         <img src="~/Content/images/category/@category.Avatar" height="80" class="img-bg">
                                     </div>
@@ -143,7 +143,7 @@
                             @foreach (var product in Model.ListProduct.Where(n => n.BrandId == 1))
                             {
                                 <li class="col-6 col-lg-3 col-md-4">
-                                    <a href="#" class="item">
+                                    <a href="@Url.Action("ProductDetail", "Product",new {Id=product.Id})" class="item">
                                         <div class="card-body">
                                             <h6 class="title">Công nghệ tiên tiến với bộ sưu tập xu hướng</h6>
                                             <img class="img-sm float-right" src="~/Content/images/product/@product.Avatar">
@@ -181,7 +181,7 @@
                             @foreach (var product in Model.ListProduct.Where(n => n.BrandId == 2))
                             {
                                 <li class="col-6 col-lg-3 col-md-4">
-                                    <a href="#" class="item">
+                                    <a href="@Url.Action("ProductDetail", "Product",new {Id=product.Id})" class="item">
                                         <div class="card-body">
                                             <h6 class="title">Công nghệ tiên tiến với bộ sưu tập xu hướng  </h6>
                                             <img class="img-sm float-right" src="~/Content/images/product/@product.Avatar">
@@ -260,7 +260,7 @@
 
 
         <!-- =============== SECTION REQUEST .//END =============== -->
-        <!-- =============== SECTION ITEMS =============== -->
+        <!-- =============== SECTION ITEMS =============== -->    
         <section class="padding-bottom-sm">
 
             <header class="section-heading heading-line">
@@ -291,7 +291,7 @@
         <section class="padding-bottom">
 
             <header class="section-heading heading-line">
-                <h4 class="title-section text-uppercase">Trade services</h4>
+                <h4 class="title-section text-uppercase">Dịch vụ thương mại</h4>
             </header>
 
             <div class="row">
@@ -299,8 +299,8 @@
                     <article class="card card-post">
                         <img src="~/Content/images/posts/1.jpg" class="card-img-top">
                         <div class="card-body">
-                            <h6 class="title">Trade Assurance</h6>
-                            <p class="small text-uppercase text-muted">Order protection</p>
+                            <h6 class="title">Đảm bảo thương mại</h6>
+                            <p class="small text-uppercase text-muted">Bảo vệ đơn hàng</p>
                         </div>
                     </article> <!-- card.// -->
                 </div> <!-- col.// -->
@@ -308,8 +308,8 @@
                     <article class="card card-post">
                         <img src="~/Content/images/posts/2.jpg" class="card-img-top">
                         <div class="card-body">
-                            <h6 class="title">Pay anytime</h6>
-                            <p class="small text-uppercase text-muted">Finance solution</p>
+                            <h6 class="title">Thanh toán mọi lúc</h6>
+                            <p class="small text-uppercase text-muted">Giải pháp tài chính</p>
                         </div>
                     </article> <!-- card.// -->
                 </div> <!-- col.// -->
@@ -317,8 +317,8 @@
                     <article class="card card-post">
                         <img src="~/Content/images/posts/3.jpg" class="card-img-top">
                         <div class="card-body">
-                            <h6 class="title">Inspection solution</h6>
-                            <p class="small text-uppercase text-muted">Easy Inspection</p>
+                            <h6 class="title">Giải pháp kiểm định</h6>
+                            <p class="small text-uppercase text-muted">Kiểm định dễ dàng</p>
                         </div>
                     </article> <!-- card.// -->
                 </div> <!-- col.// -->
@@ -326,8 +326,8 @@
                     <article class="card card-post">
                         <img src="~/Content/images/posts/4.jpg" class="card-img-top">
                         <div class="card-body">
-                            <h6 class="title">Ocean and Air Shipping</h6>
-                            <p class="small text-uppercase text-muted">Logistic services</p>
+                            <h6 class="title">Vận chuyển đường biển và hàng không</h6>
+                            <p class="small text-uppercase text-muted">Dịch vụ logistics</p>
                         </div>
                     </article> <!-- card.// -->
                 </div> <!-- col.// -->
@@ -339,19 +339,19 @@
         <section class="padding-bottom">
 
             <header class="section-heading heading-line">
-                <h4 class="title-section text-uppercase">Choose region</h4>
+                <h4 class="title-section text-uppercase">Chọn khu vực</h4>
             </header>
 
             <ul class="row mt-4">
-                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/CN.png"> <span>China</span> </a></li>
-                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/DE.png"> <span>Germany</span> </a></li>
-                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/AU.png"> <span>Australia</span> </a></li>
-                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/RU.png"> <span>Russia</span> </a></li>
-                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/IN.png"> <span>India</span> </a></li>
-                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/GB.png"> <span>England</span> </a></li>
-                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/TR.png"> <span>Turkey</span> </a></li>
+                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/CN.png"> <span>Trung Quốc</span> </a></li>
+                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/DE.png"> <span>Đức</span> </a></li>
+                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/AU.png"> <span>Úc</span> </a></li>
+                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/RU.png"> <span>Nga</span> </a></li>
+                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/IN.png"> <span>Ấn Độ</span> </a></li>
+                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/GB.png"> <span>Anh</span> </a></li>
+                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/TR.png"> <span>Thổ Nhĩ Kỳ</span> </a></li>
                 <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/UZ.png"> <span>Uzbekistan</span> </a></li>
-                <li class="col-md col-6"><a href="#" class="icontext"> <i class="mr-3 fa fa-ellipsis-h"></i> <span>More regions</span> </a></li>
+                <li class="col-md col-6"><a href="#" class="icontext"> <i class="mr-3 fa fa-ellipsis-h"></i> <span>Thêm khu vực</span> </a></li>
             </ul>
         </section>
         <!-- =============== SECTION REGION .//END =============== -->
@@ -365,19 +365,19 @@
     <section class="section-subscribe padding-y-lg">
         <div class="container">
 
-            <p class="pb-2 text-center text-white">Delivering the latest product trends and industry news straight to your inbox</p>
+            <p class="pb-2 text-center text-white">Cập nhật xu hướng sản phẩm mới nhất và tin tức ngành trực tiếp vào hộp thư của bạn</p>
 
             <div class="row justify-content-md-center">
                 <div class="col-lg-5 col-md-6">
                     <form class="form-row">
                         <div class="col-md-8 col-7">
-                            <input class="form-control border-0" placeholder="Your Email" type="email">
+                            <input class="form-control border-0" placeholder="Email của bạn" type="email">
                         </div> <!-- col.// -->
                         <div class="col-md-4 col-5">
-                            <button type="submit" class="btn btn-block btn-warning"> <i class="fa fa-envelope"></i> Subscribe </button>
+                            <button type="submit" class="btn btn-block btn-warning"> <i class="fa fa-envelope"></i> Đăng ký </button>
                         </div> <!-- col.// -->
                     </form>
-                    <small class="form-text text-white-50">We’ll never share your email address with a third-party. </small>
+                    <small class="form-text text-white-50">Chúng tôi cam kết không chia sẻ địa chỉ email của bạn với bên thứ ba.</small>
                 </div> <!-- col-md-6.// -->
             </div>
 
@@ -386,6 +386,5 @@
     </section>
     <!-- ========================= SECTION SUBSCRIBE END// ========================= -->
     <!-- ========================= FOOTER ========================= -->
-
 </body>
 </html>
