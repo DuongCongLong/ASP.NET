@@ -1,0 +1,8 @@
+﻿@{
+    ViewBag.Title = "Truy cập bị từ chối";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Truy cập bị từ chối</h2>
+<p>Bạn không có quyền truy cập vào khu vực này. Vui lòng đăng nhập với tài khoản quản trị viên.</p>
+<a href="@Url.Action("Login", "Home")">Quay lại trang đăng nhập</a>

@@ -17,8 +17,14 @@
                 data:  JSON.stringify(model),
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
-                success: function () {
-                    $('#CartCount').text(@Session["count"] - 1);
+                success: function (response) {
+                    // Cập nhật số lượng sản phẩm trong giỏ hàng
+                    $('#CartCount').text(response.cartItemCount);
+
+                    // Cập nhật tổng giá trị giỏ hàng
+                    $('#cartTotalPrice').text(response.cartTotalPrice + ' đ');
+
+                    // Xóa sản phẩm khỏi giỏ hàng (giao diện)
                     $("#product-" + model.Id).remove();
                 },
                 error: function () {
@@ -29,6 +35,7 @@
         });
     });
 </script>
+
 
 <section class="section-content padding-y">
     <div class="container">
@@ -60,7 +67,11 @@
                                             </figure>
                                         </td>
                                         <td>
-                                            <input type="text" value="@item.Quantity" />
+                                            <div class="input-group mb-3 input-spinner custom-border">
+
+                                                <input type="text" id="ipQuantity" class="form-control text-center" value="@item.Quantity">
+
+                                            </div>
                                         </td>
                                         <td>
                                             <div class="price-wrap">
@@ -113,26 +124,50 @@
                 <div class="card">
                     <div class="card-body">
                         <dl class="dlist-align">
-                            <dt>Tổng giá:</dt>
-                            <dd class="text-right">USD 568</dd>
-                        </dl>
-                        <dl class="dlist-align">
                             <dt>Giảm giá:</dt>
-                            <dd class="text-right">USD 658</dd>
+                            <dd class="text-right">0 đ</dd>
                         </dl>
                         <dl class="dlist-align">
                             <dt>Tổng cộng:</dt>
-                            <dd class="text-right  h5"><strong>$1,650</strong></dd>
+                            <dd class="text-right">
+                                <span id="cartTotalPrice" style="color: #FF4500;">
+                                    @if (Model != null)
+                                    {
+                                        decimal total = 0;
+                                        foreach (var item in Model)
+                                        {
+                                            total += (decimal)(item.Product.Price ?? 0) * item.Quantity;
+                                        }
+                                        @($"{total:N0} đ")
+                                    }
+                                    else
+                                    {
+                                        @("0 đ")
+                                    }
+                                </span>
+                            </dd>
                         </dl>
                         <hr>
                         <p class="text-center mb-3">
                             <img src="~/Content/images/misc/payments.png" height="26">
                         </p>
+                    </div>
 
-                    </div> <!-- card-body.// -->
                 </div>  <!-- card .// -->
             </aside> <!-- col.// -->
         </div>
 
     </div> <!-- container .//  -->
 </section>
+<style>
+    /* Đặt màu sắc cho nút */
+    .btn-outline-secondary {
+        border-color: orange;
+        color: orange;
+    }
+
+        .btn-outline-secondary:hover {
+            background-color: orange;
+            color: white;
+        }
+</style>

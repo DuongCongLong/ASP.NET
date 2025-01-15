@@ -142,6 +142,7 @@
     <Compile Include="Areas\Admin\Controllers\OrderController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
+    <Compile Include="Areas\Admin\Filter\AdminAuthorizeAttribute.cs" />
     <Compile Include="Context\Brand.cs">
       <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
@@ -2474,7 +2475,6 @@
     <Content Include="Views\User\Register.cshtml" />
     <Content Include="Views\Profile\Address.cshtml" />
     <Content Include="Views\Profile\Main.cshtml" />
-    <Content Include="Views\Profile\Orders.cshtml" />
     <Content Include="Views\Profile\Seller.cshtml" />
     <Content Include="Views\Profile\Setting.cshtml" />
     <Content Include="Views\Profile\Wishlist.cshtml" />
@@ -2488,6 +2488,8 @@
     <Content Include="Views\Payment\Index.cshtml" />
     <Content Include="Views\Category\Search.cshtml" />
     <Content Include="Views\Category\AllCategory.cshtml" />
+    <Content Include="Views\Profile\Orders.cshtml" />
+    <Content Include="Views\Home\AccessDenied.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

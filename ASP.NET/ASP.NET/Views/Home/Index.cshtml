@@ -26,7 +26,6 @@
                                         <li>
                                             @Html.ActionLink(category.Name, "ProductCategory", "Category", new { @Id = category.Id }, null)
                                         </li>
-
                                     }
                                 </ul>
                             </nav>
@@ -94,10 +93,10 @@
                         <p>Hệ sinh thái của nhà táo</p>
                     </header><!-- sect-heading -->
                     <div class="timer">
-                        <div> <span class="num">04</span> <small>Ngày</small></div>
-                        <div> <span class="num">12</span> <small>Giờ</small></div>
-                        <div> <span class="num">58</span> <small>Phút</small></div>
-                        <div> <span class="num">02</span> <small>Giây</small></div>
+                        <div><span class="num" id="days">00</span> <small>Ngày</small></div>
+                        <div><span class="num" id="hours">00</span> <small>Giờ</small></div>
+                        <div><span class="num" id="minutes">00</span> <small>Phút</small></div>
+                        <div><span class="num" id="seconds">00</span> <small>Giây</small></div>
                     </div>
                 </div> <!-- col.// -->
                 <div class="row no-gutters items-wrap">
@@ -326,7 +325,7 @@
                     <article class="card card-post">
                         <img src="~/Content/images/posts/4.jpg" class="card-img-top">
                         <div class="card-body">
-                            <h6 class="title">Vận chuyển đường biển và hàng không</h6>
+                            <h6 class="title">Vận chuyển đường hàng không</h6>
                             <p class="small text-uppercase text-muted">Dịch vụ logistics</p>
                         </div>
                     </article> <!-- card.// -->
@@ -343,7 +342,7 @@
             </header>
 
             <ul class="row mt-4">
-                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/CN.png"> <span>Trung Quốc</span> </a></li>
+              
                 <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/DE.png"> <span>Đức</span> </a></li>
                 <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/AU.png"> <span>Úc</span> </a></li>
                 <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/RU.png"> <span>Nga</span> </a></li>
@@ -351,7 +350,7 @@
                 <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/GB.png"> <span>Anh</span> </a></li>
                 <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/TR.png"> <span>Thổ Nhĩ Kỳ</span> </a></li>
                 <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/UZ.png"> <span>Uzbekistan</span> </a></li>
-                <li class="col-md col-6"><a href="#" class="icontext"> <i class="mr-3 fa fa-ellipsis-h"></i> <span>Thêm khu vực</span> </a></li>
+
             </ul>
         </section>
         <!-- =============== SECTION REGION .//END =============== -->
@@ -388,3 +387,38 @@
     <!-- ========================= FOOTER ========================= -->
 </body>
 </html>
+
+<script>
+    // Thời gian kết thúc
+const endTime = new Date("2025-01-20T00:00:00").getTime(); // Đặt thời gian đích ở đây
+
+// Hàm cập nhật countdown
+function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = endTime - now;
+
+    if (distance < 0) {
+        document.querySelector(".timer").innerHTML = "Hết thời gian!";
+        clearInterval(interval);
+        return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Cập nhật HTML
+    document.getElementById("days").textContent = days.toString().padStart(2, '0');
+    document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+    document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+    document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+}
+
+// Cập nhật mỗi giây
+const interval = setInterval(updateCountdown, 1000);
+
+// Gọi ngay để cập nhật lần đầu
+updateCountdown();
+
+</script>

@@ -37,9 +37,10 @@
     <div class="container">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item"><a href="#">Tên danh mục</a></li>
-            <li class="breadcrumb-item"><a href="#">Danh mục con</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Sản phẩm</li>
+            <li class="breadcrumb-item">
+                <a href="#">@ViewBag.CategoryName</a>  <!-- Hiển thị tên danh mục -->
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">@ViewBag.ProductName</li> <!-- Hiển thị tên sản phẩm -->
         </ol>
     </div>
 </section>
@@ -116,10 +117,12 @@
 
                     <div class="form-row  mt-4">
                         <div class="form-group col-md flex-grow-0">
-                            <div class="input-group mb-3 input-spinner">
-                                <input type="text" id="ipQuantity" class="form-control" value="1">
+                            <div class="input-group mb-3 input-spinner custom-border">
+                                <button class="btn btn-outline-secondary" type="button" id="decreaseBtn">-</button>
+                                <input type="text" id="ipQuantity" class="form-control text-center" value="1" readonly>
+                                <button class="btn btn-outline-secondary" type="button" id="increaseBtn">+</button>
                             </div>
-                        </div> <!-- col.// -->
+                        </div>
                         <div class="form-group col-md">
                             <a href="#" id="addtocart" class="btn  btn-primary">
                                 <i class="fas fa-shopping-cart"></i> <span class="text">Thêm vào giỏ hàng</span>
@@ -150,15 +153,6 @@
                 <div class="box">
                     <h5 class="title-description">Mô tả</h5>
                     @Model.FullDescription
-                    <h5 class="title-description">Tệp tin</h5>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
 
                     <h5 class="title-description">Video</h5>
 
@@ -219,3 +213,36 @@
 
     </div>
 </section>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const quantityInput = document.getElementById("ipQuantity");
+        const increaseBtn = document.getElementById("increaseBtn");
+        const decreaseBtn = document.getElementById("decreaseBtn");
+
+        // Xử lý nút tăng
+        increaseBtn.addEventListener("click", function () {
+            let currentValue = parseInt(quantityInput.value) || 0;
+            quantityInput.value = currentValue + 1;
+        });
+
+        // Xử lý nút giảm
+        decreaseBtn.addEventListener("click", function () {
+            let currentValue = parseInt(quantityInput.value) || 0;
+            if (currentValue > 1) { // Đảm bảo giá trị không nhỏ hơn 1
+                quantityInput.value = currentValue - 1;
+            }
+        });
+    });
+
+</script>
+<style>
+        .btn-outline-secondary {
+            border-color: orange;
+            color: orange;
+        }
+
+        .btn-outline-secondary:hover {
+            background-color: orange;
+            color: white;
+        }
+</style>
